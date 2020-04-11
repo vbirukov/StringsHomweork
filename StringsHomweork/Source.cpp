@@ -1,10 +1,27 @@
 #include <iostream>
 
+void printCase(bool even, int limit) {
+	int i = 0;
+	while (i <= limit) {
+		if (even && i%2 == 0) {
+			std::cout << i << '\n';
+		}
+		else if (!even && i % 2 != 0) {
+			std::cout << i << '\n';
+		}
+		i++;
+	}
+}
+
 int main() {
-	std::string someString("let me see what it gets to");
-	std::cout << someString << '\n';
-	int length = someString.length();
-	std::cout << length << '\n';
-	std::cout << someString[0] << '\n';
-	std::cout << someString[length-1];
+
+	int limit = 100;
+
+	for (int i = 0; i <= limit; i++) {
+		if (i%2 == 0) {
+			std::cout << i << '\n';
+		}
+	}
+
+	printCase(false, 20);
 }
