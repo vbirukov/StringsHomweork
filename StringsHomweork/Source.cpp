@@ -1,7 +1,7 @@
 #include <iostream>
 
-void printCase(bool even, int limit) {
-	int i = even ? 2 : 1;
+void printEvenOdd(int startFrom, int limit) {
+	int i = startFrom ? 2 : 1;
 	while (i <= limit) {
 		std::cout << i << '\n';
 		i += 2;
@@ -18,5 +18,5 @@ int main() {
 		}
 	}
 
-	printCase(false, 20);
+	printEvenOdd(1, 20);
 }
