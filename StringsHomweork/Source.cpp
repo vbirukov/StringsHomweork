@@ -1,15 +1,10 @@
 #include <iostream>
 
 void printCase(bool even, int limit) {
-	int i = 0;
+	int i = even ? 2 : 1;
 	while (i <= limit) {
-		if (even && i%2 == 0) {
-			std::cout << i << '\n';
-		}
-		else if (!even && i % 2 != 0) {
-			std::cout << i << '\n';
-		}
-		i++;
+		std::cout << i << '\n';
+		i += 2;
 	}
 }
 
