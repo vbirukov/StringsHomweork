@@ -1,7 +1,9 @@
 #include <iostream>
 
 int main() {
-	int today = 20;
+	int today;
+	std::cout << "какая сегодня дата?" << '\n';
+	std::cin >> today;
 	const int size = 15;
 	int Matrix[size][size];
 
