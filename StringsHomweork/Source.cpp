@@ -1,9 +1,12 @@
 #include <iostream>
+#include <ctime>
 
 int main() {
-	int today;
-	std::cout << "какая сегодня дата?" << '\n';
-	std::cin >> today;
+	time_t now = time(0);
+	struct tm timeinfo;
+	localtime_s(&timeinfo, &now);
+	int today = timeinfo.tm_mday;
+
 	const int size = 15;
 	int Matrix[size][size];
 
@@ -19,11 +22,11 @@ int main() {
 	
 
 	for (int i = 0; i < size; i++) {
-		int sum = 0;
-		for (int j = 0; j < size; j++) {
-			sum += Matrix[i][j];
-		}
-		if (sum % today == 0) {
+		if (today % size == i) {
+			int sum = 0;
+			for (int j = 0; j < size; j++) {
+				sum += Matrix[i][j];
+			}
 			std::cout << sum << '\n';
 		}
 	}
